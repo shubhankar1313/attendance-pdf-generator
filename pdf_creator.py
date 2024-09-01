@@ -8,7 +8,7 @@ class PDF(FPDF):
         """Adds text in desired letter format to the PDF page
         Parameters:
         argument1 (string): Text to be added"""
-        self.set_font("Inter", style=fstyle, size=15)
+        self.set_font("Arial", style=fstyle, size=15)
 
         if cell_type == 'm':
             self.multi_cell(0, 7, txt=text, align=text_align)
@@ -18,8 +18,8 @@ class PDF(FPDF):
 def generate_pdf(data):
     pdf = PDF(orientation="portrait", format="letter")
     pdf.add_page()
-    pdf.add_font("Inter", style='', fname=r"inter\static\\Inter_18pt-Medium.ttf", uni=True)
-    pdf.add_font("Inter", style='B', fname=r"inter\static\\Inter_18pt-SemiBold.ttf", uni=True)
+    # pdf.add_font("Inter", style='', fname=r"inter\static\\Inter_18pt-Medium.ttf", uni=True)
+    # pdf.add_font("Inter", style='B', fname=r"inter\static\\Inter_18pt-SemiBold.ttf", uni=True)
     pdf.set_x(25)
     pdf.set_y(50)
     pdf.set_left_margin(12.5)
